@@ -36,7 +36,7 @@ nums <- c(3:12, NA)
 #| label: q2
 
 divide_and_round <- function(vec){
-round(nums / min(nums, na.rm = TRUE))
+  round(vec / min(vec, na.rm = TRUE))
 }
 ```
 
@@ -46,7 +46,8 @@ round(nums / min(nums, na.rm = TRUE))
 #| label: q3
 
 test <- c(5:10, NA)
-divide_and_round(test)  #you should see mostly values of 1 and 2, plus an NA
+divide_and_round(test)
+#you should see mostly values of 1 and 2, plus an NA
 ```
 
 <!-- Swap roles -- Developer becomes Coder, Coder becomes Developer! -->
@@ -56,7 +57,7 @@ divide_and_round(test)  #you should see mostly values of 1 and 2, plus an NA
 ```{r}
 #| label: q4
 
-ifelse(nums %% 9 == 0 ___ nums %% 12 == 0, ____ , ____)  #it should say FALSE for 9 and 12 positions
+ifelse(nums %% 9 == 0 | nums %% 12 == 0, FALSE , TRUE )  #it should say FALSE for 9 and 12 positions
  
 ```
 
@@ -66,7 +67,7 @@ ifelse(nums %% 9 == 0 ___ nums %% 12 == 0, ____ , ____)  #it should say FALSE fo
 #| label: q5
 
 no_nines_or_twelves <- function(vec) {
-
+  ifelse(vec %% 9 == 0 | vec %% 12 == 0, FALSE , TRUE )
 }
 
 ```
